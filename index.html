@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Formulário</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Uma página de formulário.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Estilos gerais para o corpo da página */
+        body {
+            background-color: #121212;
+            color: #f1f1f1;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Títulos */
+        h1,
+        h2,
+        h3 {
+            color: #ff4500;
+        }
+
+        /* Estilos para o formulário */
+        form 
+        {
+            width: 100%;
+            margin-left: 30%;
+        max-width: 600px;
+        padding: 20px;
+        background-color: #333;
+        border-radius: 5px;
+        }
+
+
+        form h2 {
+            margin: 10px 0;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #555;
+            background-color: #222;
+            color: #f1f1f1;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* Estilo para os botões */
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #ff4500;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #e03e00;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Começo do formulário -->
+        <form action="legal.php" method="post">
+            <fieldset style="padding: 30px;">
+                <legend>Informações Pessoais</legend>
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" maxlength="100" required
+                    placeholder="Digite seu nome completo">
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" minlength="4" required placeholder="Digite uma senha">
+
+                <label for="data-nascimento">Data de nascimento</label>
+                <input type="date" id="data-nascimento" name="data-nascimento" required>
+
+                <label for="telefone">Número de telefone</label>
+                <input type="tel" id="telefone" name="telefone" required placeholder="(XX) XXXXX-XXXX">
+                <!-- Seleção de país -->
+                <label for="pais">Selecione seu país</label>
+                <select id="pais" name="pais" required>
+                    <option value="" disabled selected>Selecione seu país</option>
+
+                    <option value="brasil">Brasil</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="portugal">Portugal</option>
+                    <option value="estados-unidos">Estados Unidos</option>
+
+                </select>
+                <!-- Selecionar gênero -->
+                <fieldset>
+                    <legend>Selecione seu gênero:</legend>
+                    <input type="radio" name="sexo" id="masc" required>
+                    <label for="masc">Masculino</label><br>
+                    <input type="radio" name="sexo" id="fem" required>
+                    <label for="fem">Feminino</label><br>
+                    <input type="radio" name="sexo" id="outro" required>
+                    <label for="outro">Outro</label>
+                </fieldset>
+                <br>
+                <!-- Campo de comentário -->
+                <label for="comentarios" class="label-comentario">Deixe seu comentário</label>
+                <textarea id="comentarios" name="comentarios" placeholder="Deixe seu comentário"></textarea>
+                <label for="termos">
+                    <input type="checkbox" id="termos" name="termos" required> Aceito os termos e condições
+                </label>
+
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </fieldset>
+        </form>
+</body>
+
+</html>
